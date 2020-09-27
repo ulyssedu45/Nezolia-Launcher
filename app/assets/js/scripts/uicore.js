@@ -26,9 +26,9 @@ window.eval = global.eval = function () {
 
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
-    console.log('%cThe console is dark and full of terrors.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
-    console.log('%cIf you\'ve been told to paste something here, you\'re being scammed.', 'font-size: 16px')
-    console.log('%cUnless you know exactly what you\'re doing, close this window.', 'font-size: 16px')
+    console.log('%cLa console est sombre et pleine de terreurs.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
+    console.log('%cSi on vous a dit de coller quelque chose ici, vous êtes victime d\'une arnaque.', 'font-size: 16px')
+    console.log('%cÀ moins que vous ne sachiez exactement ce que vous faites, fermez cette fenêtre.', 'font-size: 16px')
 })
 
 // Disable zoom, needed for darwin.
@@ -41,22 +41,22 @@ if(!isDev){
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg){
             case 'checking-for-update':
-                loggerAutoUpdater.log('Checking for update..')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                loggerAutoUpdater.log('Recherche de mise à jour...')
+                settingsUpdateButtonStatus('Vérification des mises à jour...', true)
                 break
             case 'update-available':
-                loggerAutoUpdaterSuccess.log('New update available', info.version)
+                loggerAutoUpdaterSuccess.log('Nouvelle mise à jour disponible', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/helioslauncher-setup-${info.version}.dmg`
+                    info.darwindownload = `https://github.com/ulyssedu45/Nezolia-Launcher/releases/download/v${info.version}/helioslauncher-setup-${info.version}.dmg`
                     showUpdateUI(info)
                 }
                 
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
-                loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('Install Now', false, () => {
+                loggerAutoUpdaterSuccess.log('Mise à jour ' + info.version + ' prêt à être installé.')
+                settingsUpdateButtonStatus('Installer maintenant', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
@@ -64,8 +64,8 @@ if(!isDev){
                 showUpdateUI(info)
                 break
             case 'update-not-available':
-                loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                loggerAutoUpdater.log('Aucune nouvelle mise à jour trouvée.')
+                settingsUpdateButtonStatus('Vérifier les mises à jour')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
@@ -76,17 +76,17 @@ if(!isDev){
             case 'realerror':
                 if(info != null && info.code != null){
                     if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
-                        loggerAutoUpdater.log('No suitable releases found.')
+                        loggerAutoUpdater.log('Aucune version appropriée trouvée.')
                     } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
-                        loggerAutoUpdater.log('No releases found.')
+                        loggerAutoUpdater.log('Aucune version trouvée.')
                     } else {
-                        loggerAutoUpdater.error('Error during update check..', info)
-                        loggerAutoUpdater.debug('Error Code:', info.code)
+                        loggerAutoUpdater.error('Erreur lors de la vérification des mises à jour...', info)
+                        loggerAutoUpdater.debug('Code d\'erreur:', info.code)
                     }
                 }
                 break
             default:
-                loggerAutoUpdater.log('Unknown argument', arg)
+                loggerAutoUpdater.log('Argument inconnu', arg)
                 break
         }
     })

@@ -40,7 +40,7 @@ class ProcessBuilder {
         const tempNativePath = path.join(os.tmpdir(), ConfigManager.getTempNativeFolder(), crypto.pseudoRandomBytes(16).toString('hex'))
         process.throwDeprecation = true
         this.setupLiteLoader()
-        logger.log('Using liteloader:', this.usingLiteLoader)
+        logger.log('Utilisation de liteloader:', this.usingLiteLoader)
         const modObj = this.resolveModConfiguration(ConfigManager.getModConfiguration(this.server.getID()).mods, this.server.getModules())
         
         // Mod list below 1.13
@@ -59,7 +59,7 @@ class ProcessBuilder {
             args = args.concat(this.constructModList(modObj.fMods))
         }
 
-        logger.log('Launch Arguments:', args)
+        logger.log('Arguments de lancement:', args)
 
         const child = child_process.spawn(ConfigManager.getJavaExecutable(), args, {
             cwd: this.gameDir,
@@ -83,12 +83,12 @@ class ProcessBuilder {
             loggerMCstderr.log(data)
         })
         child.on('close', (code, signal) => {
-            logger.log('Exited with code', code)
+            logger.log('Sortie avec code', code)
             fs.remove(tempNativePath, (err) => {
                 if(err){
-                    logger.warn('Error while deleting temp dir', err)
+                    logger.warn('Erreur lors de la suppression du répertoire temporaire', err)
                 } else {
-                    logger.log('Temp dir deleted successfully.')
+                    logger.log('Répertoire temporaire supprimé avec succès.')
                 }
             })
         })
@@ -343,7 +343,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=HeliosLauncher')
+            args.push('-Xdock:name=NezoliaLauncher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM())
@@ -381,7 +381,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=HeliosLauncher')
+            args.push('-Xdock:name=NezoliaLauncher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM())
@@ -505,13 +505,13 @@ class ProcessBuilder {
             isAutoconnectBroken = Util.isAutoconnectBroken(this.forgeData.id.split('-')[2])
         } catch(err) {
             logger.error(err)
-            logger.error('Forge version format changed.. assuming autoconnect works.')
-            logger.debug('Forge version:', this.forgeData.id)
+            logger.error('Le format de la version de Forge a changé ... en supposant que la connexion automatique fonctionne.')
+            logger.debug('Version de Forge:', this.forgeData.id)
         }
 
         if(isAutoconnectBroken) {
-            logger.error('Server autoconnect disabled on Forge 1.15.2 for builds earlier than 31.2.15 due to OpenGL Stack Overflow issue.')
-            logger.error('Please upgrade your Forge version to at least 31.2.15!')
+            logger.error('La connexion automatique du serveur est désactivée sur Forge 1.15.2 pour les versions antérieures à 31.2.15 en raison d\'un problème de débordement de pile OpenGL.')
+            logger.error('Veuillez mettre à jour votre version de Forge à 31.2.15 et plus!')
         } else {
             this._processAutoConnectArg(args)
         }
@@ -723,7 +723,7 @@ class ProcessBuilder {
                         if(!shouldExclude){
                             fs.writeFile(path.join(tempNativePath, fileName), zipEntries[i].getData(), (err) => {
                                 if(err){
-                                    logger.error('Error while extracting native library:', err)
+                                    logger.error('Erreur lors de l\'extraction de la bibliothèque native:', err)
                                 }
                             })
                         }

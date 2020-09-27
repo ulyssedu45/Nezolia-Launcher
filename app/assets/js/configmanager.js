@@ -6,7 +6,7 @@ const logger = require('./loggerutil')('%c[ConfigManager]', 'color: #a02d2a; fon
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 // TODO change
-const dataPath = path.join(sysRoot, '.helioslauncher')
+const dataPath = path.join(sysRoot, '.nezolialauncher')
 
 // Forked processes do not have access to electron, so we have this workaround.
 const launcherDir = process.env.CONFIG_DIRECT_PATH || require('electron').remote.app.getPath('userData')
@@ -144,8 +144,8 @@ exports.load = function(){
             doValidate = true
         } catch (err){
             logger.error(err)
-            logger.log('Configuration file contains malformed JSON or is corrupt.')
-            logger.log('Generating a new configuration file.')
+            logger.log('Le fichier de configuration contient un JSON mal formé ou est corrompu.')
+            logger.log('Génération d\'un nouveau fichier de configuration.')
             fs.ensureDirSync(path.join(configPath, '..'))
             config = DEFAULT_CONFIG
             exports.save()
@@ -155,7 +155,7 @@ exports.load = function(){
             exports.save()
         }
     }
-    logger.log('Successfully Loaded')
+    logger.log('Chargé avec succès')
 }
 
 /**

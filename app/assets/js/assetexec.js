@@ -1,7 +1,7 @@
 let target = require('./assetguard')[process.argv[2]]
 if(target == null){
     process.send({context: 'error', data: null, error: 'Invalid class name'})
-    console.error('Invalid class name passed to argv[2], cannot continue.')
+    console.error('Nom de classe non valide transmis à argv [2], impossible de continuer.')
     process.exit(1)
 }
 let tracker = new target(...(process.argv.splice(3)))
@@ -66,6 +66,6 @@ process.on('message', (msg) => {
 })
 
 process.on('disconnect', () => {
-    console.log('AssetExec Disconnected')
+    console.log('AssetExec déconnecté')
     process.exit(0)
 })

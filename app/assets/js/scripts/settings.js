@@ -359,10 +359,10 @@ function bindAuthAccountLogOut(){
             if(Object.keys(ConfigManager.getAuthAccounts()).length === 1){
                 isLastAccount = true
                 setOverlayContent(
-                    'Warning<br>This is Your Last Account',
+                    'Attention<br>Ceci est votre dernier compte',
                     'In order to use the launcher you must be logged into at least one account. You will need to login again after.<br><br>Are you sure you want to log out?',
-                    'I\'m Sure',
-                    'Cancel'
+                    'Je suis sûr',
+                    'Annuler'
                 )
                 setOverlayHandler(() => {
                     processLogOut(val, isLastAccount)
@@ -458,7 +458,7 @@ function populateAuthAccounts(){
                     </div>
                 </div>
                 <div class="settingsAuthAccountActions">
-                    <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>Selected Account &#10004;' : '>Select Account'}</button>
+                    <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>Compte sélectionné &#10004;' : '>Sélectionnez un compte'}</button>
                     <div class="settingsAuthAccountWrapper">
                         <button class="settingsAuthAccountLogOut">Log Out</button>
                     </div>
@@ -652,7 +652,7 @@ let CACHE_DROPIN_MODS
  * populate the results onto the UI.
  */
 function resolveDropinModsForUI(){
-    const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
+    /*const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
     CACHE_SETTINGS_MODS_DIR = path.join(ConfigManager.getInstanceDirectory(), serv.getID(), 'mods')
     CACHE_DROPIN_MODS = DropinModUtil.scanForDropinMods(CACHE_SETTINGS_MODS_DIR, serv.getMinecraftVersion())
 
@@ -678,14 +678,14 @@ function resolveDropinModsForUI(){
                 </div>`
     }
 
-    document.getElementById('settingsDropinModsContent').innerHTML = dropinMods
+    document.getElementById('settingsDropinModsContent').innerHTML = dropinMods*/
 }
 
 /**
  * Bind the remove button for each loaded drop-in mod.
  */
 function bindDropinModsRemoveButton(){
-    const sEls = settingsModsContainer.querySelectorAll('[remmod]')
+    /*const sEls = settingsModsContainer.querySelectorAll('[remmod]')
     Array.from(sEls).map((v, index, arr) => {
         v.onclick = () => {
             const fullName = v.getAttribute('remmod')
@@ -702,7 +702,7 @@ function bindDropinModsRemoveButton(){
                 toggleOverlay(true)
             }
         }
-    })
+    })*/
 }
 
 /**
@@ -710,7 +710,7 @@ function bindDropinModsRemoveButton(){
  * server configuration.
  */
 function bindDropinModFileSystemButton(){
-    const fsBtn = document.getElementById('settingsDropinFileSystemButton')
+    /*const fsBtn = document.getElementById('settingsDropinFileSystemButton')
     fsBtn.onclick = () => {
         DropinModUtil.validateDir(CACHE_SETTINGS_MODS_DIR)
         shell.openPath(CACHE_SETTINGS_MODS_DIR)
@@ -733,7 +733,7 @@ function bindDropinModFileSystemButton(){
 
         DropinModUtil.addDropinMods(e.dataTransfer.files, CACHE_SETTINGS_MODS_DIR)
         reloadDropinMods()
-    }
+    }*/
 }
 
 /**
@@ -741,7 +741,7 @@ function bindDropinModFileSystemButton(){
  * of adding/removing the .disabled extension.
  */
 function saveDropinModConfiguration(){
-    for(dropin of CACHE_DROPIN_MODS){
+    /*for(dropin of CACHE_DROPIN_MODS){
         const dropinUI = document.getElementById(dropin.fullName)
         if(dropinUI != null){
             const dropinUIEnabled = dropinUI.hasAttribute('enabled')
@@ -759,7 +759,7 @@ function saveDropinModConfiguration(){
                 })
             }
         }
-    }
+    }*/
 }
 
 // Refresh the drop-in mods when F5 is pressed.
@@ -1141,12 +1141,12 @@ function populateJavaExecDetails(execPath){
         if(v.valid){
             const vendor = v.vendor != null ? ` (${v.vendor})` : ''
             if(v.version.major < 9) {
-                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major} Update ${v.version.update} (x${v.arch})${vendor}`
+                settingsJavaExecDetails.innerHTML = `Sélectionné: Java ${v.version.major} Update ${v.version.update} (x${v.arch})${vendor}`
             } else {
-                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})${vendor}`
+                settingsJavaExecDetails.innerHTML = `Sélectionné: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})${vendor}`
             }
         } else {
-            settingsJavaExecDetails.innerHTML = 'Invalid Selection'
+            settingsJavaExecDetails.innerHTML = 'Selection invalide'
         }
     })
 }
@@ -1197,11 +1197,11 @@ function isPrerelease(version){
 function populateVersionInformation(version, valueElement, titleElement, checkElement){
     valueElement.innerHTML = version
     if(isPrerelease(version)){
-        titleElement.innerHTML = 'Pre-release'
+        titleElement.innerHTML = 'Pré-version'
         titleElement.style.color = '#ff886d'
         checkElement.style.background = '#ff886d'
     } else {
-        titleElement.innerHTML = 'Stable Release'
+        titleElement.innerHTML = 'Version stable'
         titleElement.style.color = null
         checkElement.style.background = null
     }
@@ -1220,7 +1220,7 @@ function populateAboutVersionInformation(){
  */
 function populateReleaseNotes(){
     $.ajax({
-        url: 'https://github.com/dscalzi/HeliosLauncher/releases.atom',
+        url: 'https://github.com/ulyssedu45/Nezolia-Launcher/releases.atom',
         success: (data) => {
             const version = 'v' + remote.app.getVersion()
             const entries = $(data).find('entry')
@@ -1240,7 +1240,7 @@ function populateReleaseNotes(){
         },
         timeout: 2500
     }).catch(err => {
-        settingsAboutChangelogText.innerHTML = 'Failed to load release notes.'
+        settingsAboutChangelogText.innerHTML = 'Échec du chargement des notes de publication.'
     })
 }
 
@@ -1288,7 +1288,7 @@ function settingsUpdateButtonStatus(text, disabled = false, handler = null){
  */
 function populateSettingsUpdateInformation(data){
     if(data != null){
-        settingsUpdateTitle.innerHTML = `New ${isPrerelease(data.version) ? 'Pre-release' : 'Release'} Available`
+        settingsUpdateTitle.innerHTML = `Nouvelle ${isPrerelease(data.version) ? 'pré-version' : 'version'} disponible`
         settingsUpdateChangelogCont.style.display = null
         settingsUpdateChangelogTitle.innerHTML = data.releaseName
         settingsUpdateChangelogText.innerHTML = data.releaseNotes
@@ -1299,16 +1299,16 @@ function populateSettingsUpdateInformation(data){
                 shell.openExternal(data.darwindownload)
             })
         } else {
-            settingsUpdateButtonStatus('Downloading..', true)
+            settingsUpdateButtonStatus('Téléchargement...', true)
         }
     } else {
-        settingsUpdateTitle.innerHTML = 'You Are Running the Latest Version'
+        settingsUpdateTitle.innerHTML = 'Vous exécutez la dernière version'
         settingsUpdateChangelogCont.style.display = 'none'
         populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
-        settingsUpdateButtonStatus('Check for Updates', false, () => {
+        settingsUpdateButtonStatus('Vérifier les mises à jour', false, () => {
             if(!isDev){
                 ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                settingsUpdateButtonStatus('Vérification des mises à jour...', true)
             }
         })
     }
