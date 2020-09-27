@@ -1,4 +1,5 @@
 // Requirements
+// Requirements
 const AdmZip        = require('adm-zip')
 const async         = require('async')
 const child_process = require('child_process')
@@ -176,7 +177,7 @@ class Util {
             
             const forgeVer = forgeVersion.split('-')[1]
 
-            const maxFG2 = [14, 23, 5, 2847]
+            const maxFG2 = [14, 23, 5, 2854]
             const verSplit = forgeVer.split('.').map(v => Number(v))
 
             for(let i=0; i<maxFG2.length; i++) {
