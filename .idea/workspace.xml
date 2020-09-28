@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01091548-92e3-405d-8ec2-1f17d31cdcb2" name="Default Changelist" comment="" />
+    <list default="true" id="01091548-92e3-405d-8ec2-1f17d31cdcb2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/welcome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/welcome.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/icon.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +75,7 @@
       <workItem from="1601235831628" duration="49000" />
       <workItem from="1601235966068" duration="2000" />
       <workItem from="1601236087952" duration="5027000" />
+      <workItem from="1601248972780" duration="1719000" />
     </task>
     <task id="LOCAL-00001" summary="update to french">
       <created>1601229427798</created>
@@ -79,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601229427798</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="0.0.2">
+      <created>1601244265759</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601244265759</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,33 +111,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update to french" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to french" />
+    <MESSAGE value="0.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.0.2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601224843719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601224843719" />
+    <state x="657" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601249219954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="657" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601249219954" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601224430373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601224430373" />
-    <state width="1899" height="180" key="GridCell.Tab.0.bottom" timestamp="1601243928979">
+    <state width="1899" height="180" key="GridCell.Tab.0.bottom" timestamp="1601249942962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601243928979" />
-    <state width="1899" height="180" key="GridCell.Tab.0.center" timestamp="1601243928978">
+    <state width="1899" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601249942962" />
+    <state width="1899" height="180" key="GridCell.Tab.0.center" timestamp="1601249942962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="180" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601243928978" />
-    <state width="1899" height="180" key="GridCell.Tab.0.left" timestamp="1601243928978">
+    <state width="1899" height="180" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601249942962" />
+    <state width="1899" height="180" key="GridCell.Tab.0.left" timestamp="1601249942962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="180" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601243928978" />
-    <state width="1899" height="180" key="GridCell.Tab.0.right" timestamp="1601243928978">
+    <state width="1899" height="180" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601249942962" />
+    <state width="1899" height="180" key="GridCell.Tab.0.right" timestamp="1601249942962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="180" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601243928978" />
+    <state width="1899" height="180" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601249942962" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1601229531570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -174,10 +191,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601229531563" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601229429588">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601244286089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601229429588" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601244286089" />
     <state x="677" y="328" key="jetbrains.nodejs.interpreters-dialog" timestamp="1601224553888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
