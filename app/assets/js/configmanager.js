@@ -1,6 +1,7 @@
 const fs   = require('fs-extra')
 const os   = require('os')
 const path = require('path')
+const { lookpath } = require('lookpath')
 
 const logger = require('./loggerutil')('%c[ConfigManager]', 'color: #a02d2a; font-weight: bold')
 
@@ -87,7 +88,8 @@ const DEFAULT_CONFIG = {
             resHeight: 720,
             fullscreen: false,
             autoConnect: true,
-            launchDetached: true
+            launchDetached: true,
+            optirun: false
         },
         launcher: {
             allowPrerelease: false,
@@ -664,6 +666,36 @@ exports.getLaunchDetached = function(def = false){
  */
 exports.setLaunchDetached = function(launchDetached){
     config.settings.game.launchDetached = launchDetached
+}
+
+/**
+ * Check if the game should launch with optirun (linux only).
+ *
+ * @param {boolean} def Optional. If true, the default value will be returned.
+ * @returns {boolean} Whether or not the game will launch with optirun (linux only).
+ */
+exports.getOptirun = async function(def = false){
+    if(process.platform == 'linux'){
+        const p = await lookpath('optirun')
+        console.log(p)
+
+        if(p == undefined){
+            return false;
+        }else{
+            return !def ? config.settings.game.optirun : DEFAULT_CONFIG.settings.game.optirun
+        }
+    }else{
+        return false;
+    }
+}
+
+/**
+ * Change the status of whether or not the game should launch with optirun (linux only).
+ *
+ * @param {boolean} launchDetached Whether or not the game should launch with optirun (linux only)
+ */
+exports.setOptirun = function(optirun){
+    config.settings.game.optirun = optirun
 }
 
 // Launcher Settings

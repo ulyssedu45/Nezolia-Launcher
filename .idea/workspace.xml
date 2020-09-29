@@ -19,17 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01091548-92e3-405d-8ec2-1f17d31cdcb2" name="Default Changelist" comment="">
+    <list default="true" id="01091548-92e3-405d-8ec2-1f17d31cdcb2" name="Default Changelist" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/backgrounds/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/js/configmanager.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/js/configmanager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/js/scripts/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/js/scripts/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,13 +44,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/lang" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/.bin/electron" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -64,7 +63,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Start" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/node_modules/.bin/electron.cmd" node-parameters="." working-dir="$PROJECT_DIR$">
+    <configuration name="Start" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/node_modules/.bin/electron" node-parameters="." working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" application-parameters="--remote-debugging-port=9222" path-to-node="$PROJECT_DIR$/node_modules/.bin/electron.cmd" node-parameters="." working-dir="$PROJECT_DIR$">
@@ -140,26 +139,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="657" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601249219954" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601224430373">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="491" y="27" width="890" height="933" key="CommitChangelistDialog2" timestamp="1601383006459">
+      <screen x="0" y="27" width="1920" height="1020" />
+    </state>
+    <state x="491" y="27" width="890" height="933" key="CommitChangelistDialog2/0.27.1920.1020@0.27.1920.1020" timestamp="1601383006459" />
+    <state x="1220" y="355" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601383471244">
+      <screen x="0" y="27" width="1920" height="1020" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601224430373" />
-    <state width="1899" height="180" key="GridCell.Tab.0.bottom" timestamp="1601252073364">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1220" y="355" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1020@0.27.1920.1020" timestamp="1601383471244" />
+    <state width="1897" height="116" key="GridCell.Tab.0.bottom" timestamp="1601387750555">
+      <screen x="0" y="27" width="1920" height="1020" />
     </state>
     <state width="1899" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601252073364" />
-    <state width="1899" height="180" key="GridCell.Tab.0.center" timestamp="1601252073364">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1897" height="116" key="GridCell.Tab.0.bottom/0.27.1920.1020@0.27.1920.1020" timestamp="1601387750555" />
+    <state width="1897" height="116" key="GridCell.Tab.0.center" timestamp="1601387750555">
+      <screen x="0" y="27" width="1920" height="1020" />
     </state>
     <state width="1899" height="180" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601252073364" />
-    <state width="1899" height="180" key="GridCell.Tab.0.left" timestamp="1601252073364">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1897" height="116" key="GridCell.Tab.0.center/0.27.1920.1020@0.27.1920.1020" timestamp="1601387750555" />
+    <state width="1897" height="116" key="GridCell.Tab.0.left" timestamp="1601387750554">
+      <screen x="0" y="27" width="1920" height="1020" />
     </state>
     <state width="1899" height="180" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601252073364" />
-    <state width="1899" height="180" key="GridCell.Tab.0.right" timestamp="1601252073364">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1897" height="116" key="GridCell.Tab.0.left/0.27.1920.1020@0.27.1920.1020" timestamp="1601387750554" />
+    <state width="1897" height="116" key="GridCell.Tab.0.right" timestamp="1601387750555">
+      <screen x="0" y="27" width="1920" height="1020" />
     </state>
     <state width="1899" height="180" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601252073364" />
+    <state width="1897" height="116" key="GridCell.Tab.0.right/0.27.1920.1020@0.27.1920.1020" timestamp="1601387750555" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1601229531570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -208,13 +216,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601229531563" />
+    <state x="677" y="166" width="507" height="662" key="RollbackChangesDialog" timestamp="1601383016656">
+      <screen x="0" y="27" width="1920" height="1020" />
+    </state>
+    <state x="677" y="166" width="507" height="662" key="RollbackChangesDialog/0.27.1920.1020@0.27.1920.1020" timestamp="1601383016656" />
+    <state x="449" y="172" width="1022" height="737" key="SettingsEditor" timestamp="1601386530781">
+      <screen x="0" y="27" width="1920" height="1020" />
+    </state>
+    <state x="449" y="172" width="1022" height="737" key="SettingsEditor/0.27.1920.1020@0.27.1920.1020" timestamp="1601386530781" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601251883709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601251883709" />
-    <state x="677" y="328" key="jetbrains.nodejs.interpreters-dialog" timestamp="1601224553888">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="677" y="349" width="550" height="384" key="jetbrains.nodejs.interpreters-dialog" timestamp="1601383472370">
+      <screen x="0" y="27" width="1920" height="1020" />
     </state>
     <state x="677" y="328" key="jetbrains.nodejs.interpreters-dialog/0.0.1920.1040/1920.0.1280.984@0.0.1920.1040" timestamp="1601224553888" />
+    <state x="677" y="349" width="550" height="384" key="jetbrains.nodejs.interpreters-dialog/0.27.1920.1020@0.27.1920.1020" timestamp="1601383472370" />
   </component>
 </project>

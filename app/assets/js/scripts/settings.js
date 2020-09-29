@@ -360,7 +360,7 @@ function bindAuthAccountLogOut(){
                 isLastAccount = true
                 setOverlayContent(
                     'Attention<br>Ceci est votre dernier compte',
-                    'In order to use the launcher you must be logged into at least one account. You will need to login again after.<br><br>Are you sure you want to log out?',
+                    'Pour utiliser le launcher, vous devez être connecté à au moins un compte. Vous devrez vous reconnecter après. <br> <br> Voulez-vous vraiment vous déconnecter?',
                     'Je suis sûr',
                     'Annuler'
                 )
