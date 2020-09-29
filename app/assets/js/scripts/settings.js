@@ -924,6 +924,17 @@ function animateModsTabRefresh(){
         $('#settingsTabMods').fadeIn(500)
     })
 }
+// Minecraft Tab
+const settingsMinecraftOptirunCheckBox  = document.getElementById('optirun')
+
+/**
+ * Prepare minecraft tab for display.
+ */
+function prepareMinecraftTab(){
+    if(process.platform != 'linux'){
+        settingsMinecraftOptirunCheckBox.style.display = 'none'
+    }
+}
 
 /**
  * Prepare the Mods tab for display.
@@ -1344,6 +1355,7 @@ function prepareSettings(first = false) {
         setupSettingsTabs()
         initSettingsValidators()
         prepareUpdateTab()
+        prepareMinecraftTab()
     } else {
         prepareModsTab()
     }

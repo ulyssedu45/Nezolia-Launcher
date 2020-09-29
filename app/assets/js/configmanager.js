@@ -12,8 +12,8 @@ const dataPath = path.join(sysRoot, '.nezolialauncher')
 // Forked processes do not have access to electron, so we have this workaround.
 const launcherDir = process.env.CONFIG_DIRECT_PATH || require('electron').remote.app.getPath('userData')
 
-var hasOptirun = false;
-var optirunPath = undefined;
+let hasOptirun = false
+let optirunPath = undefined
 /**
  * Retrieve the absolute path of the launcher directory.
  * 
@@ -677,7 +677,7 @@ exports.setLaunchDetached = function(launchDetached){
  * @returns {boolean} Whether or not the game will launch with optirun (linux only).
  */
 exports.getOptirun = async function(def = false){
-    if(process.platform == "linux"){
+    if(process.platform == 'linux'){
         const p = await lookpath('optirun')
         if(p == undefined){
             hasOptirun = false
@@ -701,7 +701,7 @@ exports.getOptirun = async function(def = false){
  * @returns {boolean} Whether or not the game will launch with optirun (linux only).
  */
 exports.getOptirunSync = function(def = false){
-    if(process.platform == "linux"){
+    if(process.platform == 'linux'){
         if(optirunPath == undefined){
             hasOptirun = false
             config.settings.game.optirun = false
@@ -733,7 +733,7 @@ exports.getOptirunPath = function(){
  * @param {boolean} launchDetached Whether or not the game should launch with optirun (linux only)
  */
 exports.setOptirun = function(optirun){
-    if(process.platform == "linux"){
+    if(process.platform == 'linux'){
         if(!hasOptirun){
             config.settings.game.optirun = false
         }else{
