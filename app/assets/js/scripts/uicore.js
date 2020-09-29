@@ -48,7 +48,7 @@ if(!isDev){
                 loggerAutoUpdaterSuccess.log('Nouvelle mise à jour disponible', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/ulyssedu45/Nezolia-Launcher/releases/download/v${info.version}/helioslauncher-setup-${info.version}.dmg`
+                    info.darwindownload = `https://github.com/ulyssedu45/Nezolia-Launcher/releases/download/v${info.version}/Nezolia.Launcher-setup-${info.version}.dmg`
                     showUpdateUI(info)
                 }
                 
