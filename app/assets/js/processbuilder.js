@@ -59,9 +59,18 @@ class ProcessBuilder {
             args = args.concat(this.constructModList(modObj.fMods))
         }
 
+
+
+        let ExecPath = ConfigManager.getJavaExecutable()
+
+        if(process.platform == "linux" && ConfigManager.getOptirunSync()){
+            ExecPath = ConfigManager.getOptirunPath()
+            args.unshift(ConfigManager.getJavaExecutable())
+        }
+
         logger.log('Arguments de lancement:', args)
 
-        const child = child_process.spawn(ConfigManager.getJavaExecutable(), args, {
+        const child = child_process.spawn(ExecPath, args, {
             cwd: this.gameDir,
             detached: ConfigManager.getLaunchDetached()
         })

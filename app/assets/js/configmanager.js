@@ -12,6 +12,8 @@ const dataPath = path.join(sysRoot, '.nezolialauncher')
 // Forked processes do not have access to electron, so we have this workaround.
 const launcherDir = process.env.CONFIG_DIRECT_PATH || require('electron').remote.app.getPath('userData')
 
+var hasOptirun = false;
+var optirunPath = undefined;
 /**
  * Retrieve the absolute path of the launcher directory.
  * 
@@ -675,19 +677,55 @@ exports.setLaunchDetached = function(launchDetached){
  * @returns {boolean} Whether or not the game will launch with optirun (linux only).
  */
 exports.getOptirun = async function(def = false){
-    if(process.platform == 'linux'){
+    if(process.platform == "linux"){
         const p = await lookpath('optirun')
-        console.log(p)
-
         if(p == undefined){
-            return false;
+            hasOptirun = false
+            config.settings.game.optirun = false
+            return false
         }else{
+            optirunPath = p
+            hasOptirun = true
             return !def ? config.settings.game.optirun : DEFAULT_CONFIG.settings.game.optirun
         }
     }else{
-        return false;
+        config.settings.game.optirun = false
+        return false
     }
 }
+
+/**
+ * Check if the game should launch with optirun (linux only).
+ *
+ * @param {boolean} def Optional. If true, the default value will be returned.
+ * @returns {boolean} Whether or not the game will launch with optirun (linux only).
+ */
+exports.getOptirunSync = function(def = false){
+    if(process.platform == "linux"){
+        if(optirunPath == undefined){
+            hasOptirun = false
+            config.settings.game.optirun = false
+            return false
+        }else{
+            hasOptirun = true
+            return !def ? config.settings.game.optirun : DEFAULT_CONFIG.settings.game.optirun
+        }
+    }else{
+        config.settings.game.optirun = false
+        return false
+    }
+}
+
+/**
+ * Check if the game should launch with optirun (linux only).
+ *
+ * @param {boolean} def Optional. If true, the default value will be returned.
+ * @returns {boolean} Whether or not the game will launch with optirun (linux only).
+ */
+exports.getOptirunPath = function(){
+    return optirunPath
+}
+
 
 /**
  * Change the status of whether or not the game should launch with optirun (linux only).
@@ -695,7 +733,15 @@ exports.getOptirun = async function(def = false){
  * @param {boolean} launchDetached Whether or not the game should launch with optirun (linux only)
  */
 exports.setOptirun = function(optirun){
-    config.settings.game.optirun = optirun
+    if(process.platform == "linux"){
+        if(!hasOptirun){
+            config.settings.game.optirun = false
+        }else{
+            config.settings.game.optirun = optirun
+        }
+    }else{
+        config.settings.game.optirun = false
+    }
 }
 
 // Launcher Settings

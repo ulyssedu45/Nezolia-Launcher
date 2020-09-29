@@ -142,7 +142,14 @@ function initSettingsValues(){
                         v.value = gFn()
                     }
                 } else if(v.type === 'checkbox'){
-                    v.checked = gFn()
+                    const resultGFn = gFn()
+                    if(resultGFn instanceof Promise){
+                        resultGFn.then(function(value) {
+                            v.checked = value
+                        })
+                    }else{
+                        v.checked = resultGFn
+                    }
                 }
             } else if(v.tagName === 'DIV'){
                 if(v.classList.contains('rangeSlider')){
