@@ -1064,7 +1064,7 @@ document.addEventListener('keydown', (e) => {
 
 /**
  * Display a news article on the UI.
- * 
+ *
  * @param {Object} articleObject The article meta object.
  * @param {number} index The article index.
  */
@@ -1075,7 +1075,7 @@ function displayArticle(articleObject, index){
     newsArticleDate.innerHTML = articleObject.date
     newsArticleComments.innerHTML = articleObject.comments
     newsArticleComments.href = articleObject.commentsLink
-    newsArticleContentScrollable.innerHTML = '<div id="newsArticleContentWrapper"><div class="newsArticleSpacerTop"></div><img src="' + articleObject.image + '"><br>' + articleObject.content + '<div class="newsArticleSpacerBot"></div></div>'
+    newsArticleContentScrollable.innerHTML = '<div id="newsArticleContentWrapper"><div class="newsArticleSpacerTop"></div>' + articleObject.content + '<div class="newsArticleSpacerBot"></div></div>'
     Array.from(newsArticleContentScrollable.getElementsByClassName('bbCodeSpoilerButton')).forEach(v => {
         v.onclick = () => {
             const text = v.parentElement.getElementsByClassName('bbCodeSpoilerText')[0]
@@ -1102,33 +1102,31 @@ function loadNews(){
                 const articles = []
 
                 for(let i=0; i<items.length; i++){
-                // JQuery Element
+                    // JQuery Element
                     const el = $(items[i])
 
                     // Resolve date.
-                    const date = new Date(el.find('pubDate').text()).toLocaleDateString('fr-FR', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
+                    const date = new Date(el.find('pubDate').text()).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
 
                     // Resolve comments.
-                    let comments = el.find('comments').text() || '0'
+                    let comments = el.find('slash\\:comments').text() || '0'
                     comments = comments + ' Comment' + (comments === '1' ? '' : 's')
 
                     // Fix relative links in content.
-                    let content = el.find('content').html()
+                    let content = el.find('content\\:encoded').html()
                     let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
                     let matches
                     while((matches = regex.exec(content))){
                         content = content.replace(`"${matches[1]}"`, `"${newsHost + matches[1]}"`)
                     }
 
-                    let image   = el.find('image').text()
                     let link   = el.find('link').text()
                     let title  = el.find('title').text()
-                    let author = el.find('author').text()
+                    let author = el.find('dc\\:creator').text()
 
                     // Generate article.
                     articles.push(
                         {
-                            image,
                             link,
                             title,
                             date,
