@@ -1113,7 +1113,7 @@ function loadNews(){
                     comments = comments + ' Comment' + (comments === '1' ? '' : 's')
 
                     // Fix relative links in content.
-                    let content = el.find('content').text()
+                    let content = el.find('content').html()
                     let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
                     let matches
                     while((matches = regex.exec(content))){
