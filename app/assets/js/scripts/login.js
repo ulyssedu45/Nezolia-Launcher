@@ -2,8 +2,9 @@
  * Script for login.ejs
  */
 // Validation Regexes.
-const validUsername         = /^[a-zA-Z0-9_]{1,16}$/
+//const validUsername         = /^[a-zA-Z0-9_]{1,16}$/
 const basicEmail            = /^\S+@\S+\.\S+$/
+const validUsername         = /^[a-zA-Z0-9_$€*|@]{1,16}$/
 //const validEmail          = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
 // Login Elements
@@ -64,6 +65,10 @@ function validateEmail(value){
             lu = true
             if(lp){
                 loginDisabled(false)
+            }else if(value.includes('$') || value.includes('€') || value.includes('*') || value.includes('|') || value.includes('@')){
+                loginDisabled(false)
+            }else{
+                loginDisabled(true)
             }
         }
     } else {
@@ -77,9 +82,10 @@ function validateEmail(value){
  * Validate that the password field is not empty.
  * 
  * @param {string} value The password value.
+ * @param {string} email The email value.
  */
-function validatePassword(value){
-    if(value){
+function validatePassword(value, email){
+    if(value || (validUsername.test(email) && (email.includes('$') || email.includes('€') || email.includes('*') || email.includes('|') || email.includes('@')))){
         loginPasswordError.style.opacity = 0
         lp = true
         if(lu){
@@ -98,7 +104,7 @@ loginUsername.addEventListener('focusout', (e) => {
     shakeError(loginEmailError)
 })
 loginPassword.addEventListener('focusout', (e) => {
-    validatePassword(e.target.value)
+    validatePassword(e.target.value, loginUsername.value)
     shakeError(loginPasswordError)
 })
 
@@ -107,7 +113,7 @@ loginUsername.addEventListener('input', (e) => {
     validateEmail(e.target.value)
 })
 loginPassword.addEventListener('input', (e) => {
-    validatePassword(e.target.value)
+    validatePassword(e.target.value, loginUsername.value)
 })
 
 /**

@@ -437,6 +437,7 @@ const settingsCurrentAccounts = document.getElementById('settingsCurrentAccounts
 /**
  * Add auth account elements for each one stored in the authentication database.
  */
+
 function populateAuthAccounts(){
     const authAccounts = ConfigManager.getAuthAccounts()
     const authKeys = Object.keys(authAccounts)
@@ -449,9 +450,15 @@ function populateAuthAccounts(){
 
     authKeys.map((val) => {
         const acc = authAccounts[val]
+        let uuid = acc.uuid
+
+        if(uuid.startsWith('nope_')){
+            uuid = '017df5a84bb34230a05857ffcd261601'
+        }
+
         authAccountStr += `<div class="settingsAuthAccount" uuid="${acc.uuid}">
             <div class="settingsAuthAccountLeft">
-                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://crafatar.com/renders/body/${acc.uuid}?scale=3&default=MHF_Steve&overlay">
+                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://crafatar.com/renders/body/${uuid}?scale=3&default=MHF_Steve&overlay">
             </div>
             <div class="settingsAuthAccountRight">
                 <div class="settingsAuthAccountDetails">

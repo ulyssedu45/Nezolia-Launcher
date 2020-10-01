@@ -122,6 +122,7 @@ document.getElementById('avatarOverlay').onclick = (e) => {
     })
 }
 
+
 // Bind selected account
 function updateSelectedAccount(authUser){
     let username = 'Aucun compte sélectionné'
@@ -130,7 +131,12 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://crafatar.com/renders/body/${authUser.uuid}')`
+            let uuid = authUser.uuid
+
+            if(uuid.startsWith('nope_')){
+                uuid = '017df5a84bb34230a05857ffcd261601'
+            }
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://crafatar.com/renders/body/${uuid}')`
         }
     }
     user_text.innerHTML = username
