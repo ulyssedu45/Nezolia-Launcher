@@ -1,13 +1,13 @@
 {
   "name": "nezolialauncher",
-  "version": "1.0.3",
-  "productName": "Nezolia Launcher",
+  "version": "0.0.2",
+  "productName": "SCP WORLD Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": "Nezolia (https://nezolia.fr)",
+  "author": "Dedeception (https://geek-heberg.eu)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/ulyssedu45/Nezolia-Launcher",
+  "homepage": "https://github.com/dedeception/SCP-World-launcher",
   "bugs": {
-    "url": "https://github.com/ulyssedu45/Nezolia-Launcher/issues"
+    "url": "https://github.com/dedeception/SCP-World-launcher/issues"
   },
   "private": true,
   "main": "index.js",
